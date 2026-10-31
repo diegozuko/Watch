@@ -1,0 +1,30 @@
+# Genera el proyecto de Xcode con XcodeGen:
+#   brew install xcodegen
+#   cd watch && xcodegen
+#   open CrownScroll.xcodeproj
+name: CrownScroll
+options:
+  bundleIdPrefix: com.diegozuko
+  deploymentTarget:
+    watchOS: "10.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGN_STYLE: Automatic
+targets:
+  CrownScroll:
+    type: application
+    platform: watchOS
+    sources:
+      - CrownScroll
+    info:
+      path: CrownScroll/Info.plist
+      properties:
+        CFBundleDisplayName: CrownScroll
+        WKApplication: true
+        WKWatchOnly: true
+        NSBluetoothAlwaysUsageDescription: CrownScroll usa Bluetooth para conectarse al ESP32 y hacer scroll en el iPhone.
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.diegozuko.crownscroll
+        TARGETED_DEVICE_FAMILY: "4"
